@@ -23,7 +23,7 @@ schema = (
 pipeline_args = [
     '--project=uplifted-kit-437502-g2',  # Change to your GCP project ID
     '--runner=DataflowRunner',
-    '--region=us-central1',  # Adjust as per your GCP region
+    '--region=us-east1',  # Adjust as per your GCP region
     '--staging_location=gs://chinnaka_workshop2/temp/staging/',  # Change to your bucket path
     '--temp_location=gs://chinnaka_workshop2/temp',  # Change to your bucket path
     '--streaming',
@@ -51,7 +51,7 @@ result.wait_until_finish()
 
 # Grabbing job ID and region info to save in a file
 job_id = result._job.id
-region = 'us-central1'  # Adjust as per your GCP region
+region = 'us-east1'  # Adjust as per your GCP region
 
 with open("job_info.txt", "w") as file:
     file.write(f"{job_id}\n{region}")
